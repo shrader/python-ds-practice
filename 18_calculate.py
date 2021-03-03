@@ -40,12 +40,12 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
     elif operation == "multiply":
         result = a * b
     elif operation == "divide":
-        result = bigger / smaller
+        result = a / b
+    else:
+        return
 
     if make_int:
         result = int(result)
-        return f"{message} {result}"
-    else:
-        return f'{message} {result}'
 
-#Getting syntax error not sure why
+    return f'{message} {result}'
+

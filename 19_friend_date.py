@@ -17,7 +17,4 @@ def friend_date(a, b):
         True
     """
 
-    if (set(a[2]) & set(b[2])):
-        return True
-    else:
-        return False
+    return True if (set(a[2]) & set(b[2])) else False

@@ -1,3 +1,5 @@
+import math
+
 def find_factors(num):
     """Find factors of num, in increasing order.
 
@@ -13,3 +15,20 @@ def find_factors(num):
     >>> find_factors(321421)
     [1, 293, 1097, 321421]
     """
+
+    curr_num = 1
+
+    small_factors = []
+    large_factors = []
+
+
+    while curr_num <= math.sqrt(num):
+        if num % curr_num == 0:
+            small_factors.append(curr_num)
+            large_factors.append(num//curr_num)
+        curr_num += 1
+    
+    return small_factors + large_factors[::-1]
+
+
+

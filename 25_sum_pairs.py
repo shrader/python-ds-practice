@@ -21,3 +21,16 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+    pair = tuple()
+    index = 0
+    compliment_index = float('inf')
+
+    while index < len(nums):
+        compliment = goal - nums[index]
+        if compliment in nums[index + 1:] and nums.index(compliment) < compliment_index:
+            compliment_index = nums.index(compliment)
+            pair = (nums[index],compliment)
+        index += 1
+
+
+    return pair
